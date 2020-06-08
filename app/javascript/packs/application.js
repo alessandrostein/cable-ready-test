@@ -6,7 +6,6 @@ Rails.start();
 
 // Utility function to require all files in a directory...
 function requireAll(r) {
-  // console.log(r.keys());
   r.keys().forEach(r);
 }
 
@@ -22,4 +21,4 @@ application.load(definitionsFromContext(context));
 StimulusReflex.initialize(application, { consumer, controller, debug: false })
 
 // Require everything in our channels directory
-requireAll(require.context("../channels/", true, /\.js$/)); // eslint-disable-line no-undef
+requireAll(require.context("../channels/", true, /\.js$/));
