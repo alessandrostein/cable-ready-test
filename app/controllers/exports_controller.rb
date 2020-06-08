@@ -2,8 +2,6 @@
 
 class ExportsController < ApplicationController
   def index
-    @exports = Export.all
+    @exports ||= Export.all.order(created_at: :desc)
   end
-
-  def create; end
 end
