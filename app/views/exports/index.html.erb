@@ -1,0 +1,18 @@
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Status</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @exports.each do |export| %>
+			<tr>
+				<td><%= export.id %></td>
+				<td><%= export.status.humanize %></td>
+				<td><%= l export.created_at, format: :short %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
