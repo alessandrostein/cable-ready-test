@@ -20,3 +20,6 @@ const application = Application.start();
 const context = require.context("../controllers", true, /.js$/);
 application.load(definitionsFromContext(context));
 StimulusReflex.initialize(application, { consumer, controller, debug: false })
+
+// Require everything in our channels directory
+requireAll(require.context("../channels/", true, /\.js$/)); // eslint-disable-line no-undef
