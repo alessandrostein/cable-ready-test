@@ -11,6 +11,6 @@ class ExportsController < ApplicationController
     )
     cable_ready.broadcast
 
-    sleep 10
+    sleep 5
   end
 end
