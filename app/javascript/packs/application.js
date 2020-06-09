@@ -4,10 +4,12 @@ Turbolinks.start();
 import Rails from "@rails/ujs";
 Rails.start();
 
+import 'channels';
+
 // Utility function to require all files in a directory...
-function requireAll(r) {
-  r.keys().forEach(r);
-}
+// function requireAll(r) {
+//   r.keys().forEach(r);
+// }
 
 import { Application } from "stimulus";
 import { definitionsFromContext } from "stimulus/webpack-helpers";
@@ -18,7 +20,7 @@ import controller from '../controllers/application_controller';
 const application = Application.start();
 const context = require.context("../controllers", true, /.js$/);
 application.load(definitionsFromContext(context));
-StimulusReflex.initialize(application, { consumer, controller, debug: false })
+StimulusReflex.initialize(application, { consumer, controller, debug: false });
 
 // Require everything in our channels directory
-requireAll(require.context("../channels/", true, /\.js$/));
+// requireAll(require.context("../channels/", true, /\.js$/));
